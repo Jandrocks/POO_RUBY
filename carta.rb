@@ -5,7 +5,13 @@ class Carta
         @numero = numero
         @pinta = pinta
     end
-  end
+
+    #transforma a String las variables del metodo
+    def to_s
+      "#{@numero}, #{pinta}"
+    end
+
+end
 
   i = 0
   intentos = 5
@@ -14,7 +20,9 @@ class Carta
     arr =['C','D','E','T'].sample
     ran_num = Random.rand(1..13)
     p = Carta.new(ran_num,arr)
-    puts "carta:#{p.numero}"" de ""#{p.pinta}"  
+    p.numero 
+    p.pinta
+    #puts "carta:#{p.numero}"" de ""#{p.pinta}"  
     i += 1
   end
 
