@@ -1,13 +1,13 @@
-
-meza = 33333333
-    puts "#{meza}" 
-meza = meza.digits
-    puts "#{meza}" 
-meza = meza.count
-    puts "#{meza}" 
-
-if meza != 8
-    puts "debe ingresar 8 digitos"
-else
-    puts "es correcto tiene 8 digitos"
+class Persona
+    def initialize
+        @edad = 0
+    end
+    def envejecer
+        self.edad += 1
+    end
+    def envejecer_rapido
+        10.times { self.envejecer }
+    end
 end
+
+puts Persona.new.envejecer_rapido
