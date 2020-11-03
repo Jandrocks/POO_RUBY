@@ -11,7 +11,7 @@ class RedSocial
         def initialize(tipo, nombre_usuario)
         @tipo = tipo
         @nombre_usuario = nombre_usuario
-    end
+        end
 end
 
 rs1 = RedSocial.new(:facebook, 'lop2030')

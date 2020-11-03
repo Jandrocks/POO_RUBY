@@ -10,12 +10,11 @@ class Usuario
     def saldo_total
         sum = 0
         cuentas.each{|cuenta| sum += cuenta.saldo}
-        puts "Suma saldo #{sum}"      
+        puts "Total suma en cuentas de #{@nombre_usario} : #{sum}"      
         
     end
 
 end
-
 
 #clase cuentaBancaria (metodo transferir)
 class CuentaBancaria
@@ -37,13 +36,16 @@ end
 cuenta1 = CuentaBancaria.new("santander", 8888888, 5000)
 #instanciaciòn cuenta2 de cuentaBancaria
 cuenta2 = CuentaBancaria.new("santander", 9999999, 5000)
+#instanciaciòn cuenta3 de cuentaBancaria
+cuenta3 = CuentaBancaria.new("santander", 7777777, 2000)
 
 cuenta1.Transferir(5000, cuenta2)
-puts "saldo cuenta 2: #{cuenta2.saldo}" 
-puts "saldo cuenta 1: #{cuenta1.saldo}" 
+puts "saldo cuenta #{cuenta2.numero_cuenta}: #{cuenta2.saldo}" 
+puts "saldo cuenta #{cuenta1.numero_cuenta}: #{cuenta1.saldo}" 
+puts "saldo cuenta #{cuenta3.numero_cuenta}: #{cuenta3.saldo}" 
 
 #instanciaciòn de usuario
-usuario = Usuario.new("Alejandro",[cuenta1, cuenta2])
-puts "saldo cuenta 2 #{usuario.nombre_usario}: #{usuario.cuentas[1].saldo}" 
+usuario = Usuario.new("Alejandro",[cuenta1, cuenta2, cuenta3])
+puts "nombre: #{usuario.nombre_usario} | saldo: #{usuario.cuentas[1].saldo} | cuenta: #{usuario.cuentas[1].numero_cuenta}" 
 
 puts usuario.saldo_total
